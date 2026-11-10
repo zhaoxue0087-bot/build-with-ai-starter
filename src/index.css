@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --tv-bg: #ffffff;
+    --tv-surface: #ffffff;
+    --tv-surface-hover: #f0f3fa;
+    --tv-border: #e0e3eb;
+    --tv-text: #131722;
+    --tv-muted: #787b86;
+    --tv-bull: #089981;
+    --tv-bear: #f23645;
+    --tv-blue: #2962ff;
+  }
+
+  .dark {
+    --tv-bg: #131722;
+    --tv-surface: #1e222d;
+    --tv-surface-hover: #2a2e39;
+    --tv-border: #2a2e39;
+    --tv-text: #d1d4dc;
+    --tv-muted: #787b86;
+    --tv-bull: #089981;
+    --tv-bear: #f23645;
+    --tv-blue: #2962ff;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono, [data-tabular="true"] {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom fine scrollbars typical of TradingView */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(120, 123, 134, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(120, 123, 134, 0.5);
+}
+
+@keyframes tickerMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: tickerMarquee 45s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}

@@ -1,0 +1,6 @@
+{
+  "name": "TradingView Markets Terminal",
+  "description": "Comprehensive market terminal tracking global stocks, crypto, forex, indices, futures, interactive technical charts, heatmaps, and financial screeners.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
